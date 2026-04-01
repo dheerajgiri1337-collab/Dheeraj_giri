@@ -18,7 +18,7 @@ OWNER_ID = int(os.environ.get("OWNER_ID", "7068785548"))
 CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1003497462500"))
 
 # //FORCE_CHANNEL_ID
-CHANNEL_ID2 = int(os.environ.get("CHANNEL_ID2", "-1003497462500")) 
+CHANNEL_ID2 = int(os.environ.get("CHANNEL_ID2", "-1003175286998")) 
 # ------------------------------------------------
 MONGO_URL = os.environ.get("MONGO_URL", "mongodb+srv://besib69802:YMOfgvnyjbRgW5qt@cluster0.yzzu2gn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 # -----------------------------------------------
@@ -43,7 +43,7 @@ THUMB_URL = os.environ.get("THUMB_URL", "https://i.ibb.co/B5G4jZ8q/IMG-20260401-
 # BOT_TOKEN = os.environ.get("BOT_TOKEN", "8705760676:AAGtb1xjrMXd-IAWvwQTwem3z3bgKidIlEs")
 # BOT_USERNAME = os.environ.get("BOT_USERNAME", "@DHEERAJ786_bot")
 # OWNER_ID = int(os.environ.get("OWNER_ID", "7068785548"))
-# SUDO_USERS = list(map(int, getenv("SUDO_USERS", "7068785548").split()))
+# dheeraj_og = list(map(int, getenv("dheeraj_og", "7068785548").split()))
 # CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "--1003497462500"))
 # MONGO_URL = os.environ.get("MONGO_URL", "mongodb+srv://wadiro6523:08AwfhhKRdQaS1i6@cluster0.krzxuop.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 # PREMIUM_LOGS = int(os.environ.get("PREMIUM_LOGS", "-1003497462500"))
