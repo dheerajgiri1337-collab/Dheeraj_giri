@@ -6,8 +6,8 @@ from config import CHANNEL_ID2
 from Extractor.core import script
 from Extractor.core.mongo.plans_db import premium_users
 
-# Tera naya backup link yahan set kar diya hai
-NEW_JOIN_LINK = "https://t.me/BR0DG"
+# --- YAHAN APNA BACKUP CHANNEL USERNAME DALO (Bina @ ke) ---
+CHECK_CH = "BR0DG" 
 
 async def chk_user(query, user_id):
     user = await premium_users()
@@ -30,7 +30,6 @@ async def get_seconds(time_string):
         if value:
             value = int(value)
         return value, unit
-
     value, unit = extract_value_and_unit(time_string.lower())
     if unit == 's': return value
     elif unit == 'min': return value * 60
@@ -42,32 +41,35 @@ async def get_seconds(time_string):
 
 async def subscribe(app, message):
     try:
-        update_channel = CHANNEL_ID2
+        # Bot ab @BR0DG mein check karega ki user ne join kiya ya nahi
+        update_channel = CHECK_CH 
         if not update_channel:
             return 0
 
         try:
             user = await app.get_chat_member(update_channel, message.from_user.id)
             if user.status == "kicked":
-                await message.reply_text("🚫 Sorry Sir, You are Banned. Contact My Support Group @DevsOops")
+                await message.reply_text("🚫 Sorry Sir, You are Banned.")
                 return 1
         except UserNotParticipant:
             try:
+                # User ko join karne ke liye naya link dikhayega
+                join_url = f"https://t.me/{CHECK_CH}"
                 sent = await message.reply_photo(
                     photo="https://telegra.ph/file/b7a933f423c153f866699.jpg",
                     caption=script.FORCE_MSG.format(message.from_user.mention),
                     reply_markup=InlineKeyboardMarkup([[
-                        InlineKeyboardButton("🤖 JOIN BACKUP CHANNEL 🤖", url=NEW_JOIN_LINK)
+                        InlineKeyboardButton("🤖 JOIN BACKUP CHANNEL 🤖", url=join_url)
                     ]])
                 )
                 await asyncio.sleep(15)
                 await sent.delete()
             except Exception as e:
-                print(f"Link showing failed: {e}")
+                print(f"Link error: {e}")
                 await message.reply_text(
                     "❗ Please join our backup channel to use the bot.",
                     reply_markup=InlineKeyboardMarkup([[
-                        InlineKeyboardButton("🤖 JOIN BACKUP 🤖", url=NEW_JOIN_LINK)
+                        InlineKeyboardButton("🤖 JOIN BACKUP 🤖", url=f"https://t.me/{CHECK_CH}")
                     ]])
                 )
             return 1
