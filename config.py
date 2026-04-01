@@ -47,5 +47,5 @@ THUMB_URL = os.environ.get("THUMB_URL", "https://josephscollege.ac.in/wp-content
 # CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1003175286998"))
 # MONGO_URL = os.environ.get("MONGO_URL", "mongodb+srv://wadiro6523:08AwfhhKRdQaS1i6@cluster0.krzxuop.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 # PREMIUM_LOGS = int(os.environ.get("PREMIUM_LOGS", "-1003175286998"))
-# THUMB_URL = os.environ.get("THUMB_URL", "https://i.fbcd.co/products/original/ug-circle-logo-design-2-e84695ca2ab9a697d2b2d7c928b0bf5f12bf18e076da241815e0372c8d617915.jpg")
+# THUMB_URL = os.environ.get("THUMB_URL", "https://i.ibb.co/B5G4jZ8q/IMG-20260401-150751.jpg")
 
